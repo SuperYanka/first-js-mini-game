@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{ position: absolute; left: 25%; top: 50%; } 
+        #man {
+    position: absolute;
+    }  
+    #M1{
+        padding: 0px 100px 0px 200px;
+    }
+.run{
+    position: absolute;
+    right: 0;
+    font-family: monospace;
+    padding: 10px;
+}
+.goal{
+    position: absolute;
+    margin-right: 200px;
+    margin-top: 10px;
+    font-family: monospace;
+    right: 0;
+}
+#field {
+    left: 0%;
+    height: 300px; width: 800px;
+    border-bottom: 4px black groove;
+    position: relative;
+     }
+
+    </style>
+</head>
+<body> 
+
+    <span class="run" style="border:3px #00B344  double; width:170px;"> Идти вперед - пробел
+    двигаться - стрелки лево-право</span>
+
+    <span class="goal" style="border:3px #00ccb1  double; width:100px;"> Цель: попробуйте найти выход</span>
+    
+
+
+     <img src= "https://c.tenor.com/aeLfWb-5DSsAAAAM/plant-monster.gif" width="100"> 
+   <span id="M1"> <img src= "https://i.gifer.com/origin/89/895398ed8e9a3b170fad7a28ab6f2c27_w200.gif" width="150"> </span>
+      <img src= "https://c.tenor.com/HFvTj8d1tXAAAAAC/bite-shadow.gif" width="150">
+    
+    <div id="man"><img src="https://cdn-icons-png.flaticon.com/512/52/52033.png" width="100"></div>  
+
+<script>
+    var l = 350;
+    var t = 380;   
+    
+window.onkeydown =function move(){    
+             if(event.keyCode==37){ 
+                 l-=10;  
+                document.getElementById('man').style.left = l + 'px'; 
+            }
+            else 
+                if(event.keyCode==39){
+                l+=10;
+                document.getElementById('man').style.left= l + 'px';
+            }  else 
+                if(event.keyCode==32){
+                t-=50;  
+                document.getElementById('man').style.top = t + 'px';
+            
+                } 
+                
+                   if ( (t<=0)  && (l>-10) )   
+                   if ( (t<=0)  && (l<999999) ) 
+                  { alert('Вы смогли сбежать!!!');  
+                  location.reload(true); 
+                   }
+
+                   if ( (t<=140)  && (l>0) )   
+                   if ( (t<=140)  && (l<80) ) 
+                    
+                 { alert('Вас убили!'); 
+                  location.reload(true);  }  
+                
+                   
+                   
+                if ( (t<=140)  && (l>250) )   
+                   if ( (t<=140)  && (l<400) ) 
+                 { alert('Вас убили!'); 
+                  location.reload(true);  }  
+
+                
+                  if ( (t<=140)  && (l>500) )   
+                   if ( (t<=140)  && (l<700) ) 
+                 { alert('Вас убили!'); 
+                  location.reload(true);  }  
+
+                  if ( (l<=-50)  && (t>0) )   
+                   if ( (l<=-50)  && (t<999999) ) 
+                 { alert('Туда нельзя!'); 
+                  location.reload(true);  }  
+                  
+                  if ( (l>=800)  && (t>0) )   
+                   if ( (l>=800)  && (t<999999) ) 
+                 { alert('Вы выпали с мира!'); 
+                  location.reload(true);  }  
+                  
+
+                 
+                   }  
+</script>
+<div id="field"></div>
+</body>
+</html>
