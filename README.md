@@ -14,3 +14,5 @@ The project demonstrates basic DOM manipulation, keyboard event handling and sim
 - Jump action with Space
 - Simple win/lose conditions
 - Basic object collision checks
+
+![preview](/Game.gif)
